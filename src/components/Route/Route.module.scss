@@ -1,0 +1,9 @@
+@use '../../style/variable.scss' as var;
+
+.Route {
+	width: 100%;
+	align-self: center;
+	> img {
+		background-size: contain;
+	}
+}

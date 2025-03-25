@@ -1,0 +1,28 @@
+@use '../../style/mixin.scss' as mix;
+@use '../../style/variable.scss' as var;
+
+.BookLink {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	column-gap: 20px;
+	@include mix.link-reset();
+	font-family: var.$secondary-font;
+	letter-spacing: 2px;
+	cursor: pointer;
+	.img {
+		width: 75px;
+		height: 75px;
+		> img {
+			background-size: contain;
+		}
+	}
+	.text {
+		font-size: var.$font-small;
+		margin: 0;
+		font-weight: 600;
+	}
+	.arrowRight {
+		width: 15px;
+	}
+}

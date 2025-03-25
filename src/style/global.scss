@@ -1,0 +1,31 @@
+@use './variable.scss' as var;
+@use './fonts.scss';
+
+html {
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+body {
+	font-family: var.$primary-font;
+	background-color: var.$color-secondary;
+	color: var.$color-primary;
+}
+
+#root {
+	min-height: 100vh;
+	overflow-x: hidden;
+}
+
+img,
+svg {
+	display: block; 
+	max-width: 100%; 
+	height: auto; 
+}

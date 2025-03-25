@@ -1,0 +1,77 @@
+@use '../../style/variable.scss' as var;
+
+.LoadingScreen {
+	position: relative;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	.logo {
+		margin-bottom: 50px;
+		width: 75px;
+		height: 75px;
+		> svg {
+			fill: var.$color-secondary;
+		}
+	}
+	.texts {
+		> p {
+			margin: 0;
+		}
+		:nth-child(1) {
+			margin-bottom: 10px;
+			font-size: var.$font-large;
+			color: var.$color-secondary;
+		}
+		:nth-child(2) {
+			font-size: var.$font-large;
+			margin-bottom: 20px;
+		}
+		:nth-child(3) {
+			font-size: var.$font-small;
+			font-family: var.$secondary-font;
+			color: var.$color-secondary;
+			opacity: 0.8;
+		}
+		:nth-child(4) {
+			font-family: var.$secondary-font;
+			font-size: var.$font-medium;
+			color: var.$color-secondary;
+		}
+		:nth-child(5) {
+			font-family: var.$secondary-font;
+			font-size: var.$font-medium;
+			color: var.$color-secondary;
+		}
+	}
+	.decor {
+		margin-top: auto;
+		margin-bottom: 40px;
+		position: relative;
+		width: 20px;
+		height: 20px;
+		> span {
+			position: absolute;
+			display: inline-block;
+			width: 5px;
+			height: 5px;
+			border-radius: 50%;
+			background-color: var.$color-secondary;
+		}
+		:nth-child(1) {
+			left: 0;
+			top: 0;
+		}
+		:nth-child(2) {
+			right: 0;
+			top: 0;
+		}
+		:nth-child(3) {
+			left: 0;
+			bottom: 0;
+		}
+		:nth-child(4) {
+			right: 0;
+			bottom: 0;
+		}
+	}
+}
