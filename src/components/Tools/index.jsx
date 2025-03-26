@@ -6,6 +6,10 @@ import { PickIcon } from "../../assets/image/svg/PickIcon.jsx";
 import { CompassIcon } from "../../assets/image/svg/CompassIcon.jsx";
 import { FlashlightIcon } from "../../assets/image/svg/FlashlightIcon.jsx";
 
+// Импорт Swiper и его стили
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css"; 
+
 const tools = [
   { id: 1, text: "Knife", icon: <KnifeIcon /> },
   { id: 2, text: "Pick", icon: <PickIcon /> },
@@ -22,21 +26,27 @@ const Tools = () => {
         <span>Tools</span> You Need
       </h3>
       <nav className={s.nav}>
-        <ul className={s.list}>
+        <Swiper
+          spaceBetween={20}
+          slidesPerView={"auto"}
+          loop={true}
+          className={s.customSwiper}
+        >
           {[...tools, ...tools].map(({ id, text, icon }, index) => (
-            <li
-              className={classNames({
-                [s.item]: true,
-                [s.active]: active === index,
-              })}
-              key={id}
-              onClick={() => setActive(index)}
-            >
-              <div className={s.image}>{icon}</div>
-              {active === index && <span className={s.text}>{text}</span>}
-            </li>
+            <SwiperSlide key={id} style={{ width: "unset" }}>
+              <div
+                className={classNames({
+                  [s.item]: true,
+                  [s.active]: active === index,
+                })}
+                onClick={() => setActive(index)}
+              >
+                <div className={s.image}>{icon}</div>
+                {active === index && <span className={s.text}>{text}</span>}
+              </div>
+            </SwiperSlide>
           ))}
-        </ul>
+        </Swiper>
       </nav>
     </div>
   );

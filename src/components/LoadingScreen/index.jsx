@@ -10,7 +10,7 @@ const LoadingScreen = () => {
       <div className={s.texts}>
         <p>Let’s get</p>
         <p>lost</p>
-        <span> with</span>
+        <p>with</p>
         <p>Seham</p>
         <p>Kharraz</p>
       </div>
