@@ -7,13 +7,17 @@ import { CompassIcon } from "../../assets/image/svg/CompassIcon.jsx";
 import { FlashlightIcon } from "../../assets/image/svg/FlashlightIcon.jsx";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css"; 
+import "swiper/css";
 
 const tools = [
   { id: 1, text: "Knife", icon: <KnifeIcon /> },
   { id: 2, text: "Pick", icon: <PickIcon /> },
   { id: 3, text: "Compass", icon: <CompassIcon /> },
   { id: 4, text: "Flashlight", icon: <FlashlightIcon /> },
+  { id: 5, text: "Knife", icon: <KnifeIcon /> },
+  { id: 6, text: "Pick", icon: <PickIcon /> },
+  { id: 7, text: "Compass", icon: <CompassIcon /> },
+  { id: 8, text: "Flashlight", icon: <FlashlightIcon /> },
 ];
 
 const Tools = () => {
@@ -31,7 +35,7 @@ const Tools = () => {
           loop={true}
           className={s.customSwiper}
         >
-          {[...tools, ...tools].map(({ id, text, icon }, index) => (
+          {tools.map(({ id, text, icon }, index) => (
             <SwiperSlide key={id} style={{ width: "unset" }}>
               <div
                 className={classNames({
