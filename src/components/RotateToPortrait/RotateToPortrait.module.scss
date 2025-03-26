@@ -1,0 +1,25 @@
+.RotateToPortrait {
+	height: 100vh;
+	display: flex;
+	.phone {
+		margin: auto;
+		img {
+			animation: rotatePhone 2s ease-in-out infinite;
+		}
+	}
+}
+
+@keyframes rotatePhone {
+	0% {
+		transform: rotate(90deg); 
+	}
+	40% {
+		transform: rotate(0deg); 
+	}
+	60% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(90deg); 
+	}
+}
