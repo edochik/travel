@@ -1,0 +1,24 @@
+@use '../../style/variable.scss' as var;
+
+.PageContent {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	min-height: 100vh;
+	padding: var.$padding-app;
+	overflow: hidden;
+	&::after {
+		position: absolute;
+		content: '';
+		background-image: url(../../public/floor.png);
+		background-repeat: no-repeat;
+		background-position: bottom center;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		top: 0;
+		background-size: 120%;
+		z-index: -9;
+	}
+}

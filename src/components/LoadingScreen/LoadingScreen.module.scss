@@ -2,9 +2,24 @@
 
 .LoadingScreen {
 	position: relative;
-	flex: 1;
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
+	background-color: var.$color-highlight;
+	position: relative;
+	padding: var.$padding-app;
+	&::before {
+		position: absolute;
+		content: '';
+		background-image: url(../../../public/example-Photoroom.png);
+		background-repeat: no-repeat;
+		background-position: bottom center;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		top: 0;
+		background-size: 120%;
+	}
 	.logo {
 		margin-bottom: 35px;
 		width: 50px;
@@ -66,5 +81,11 @@
 			right: 0;
 			bottom: 0;
 		}
+	}
+}
+
+@media (max-width: 420px) {
+	.LoadingScreen::before {
+		background-size: 100%;
 	}
 }
