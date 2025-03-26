@@ -1,5 +1,5 @@
-import { LoadingScreen } from "../components/LoadingScreen/index.jsx";
-import { PageContent } from "../components/PageContent/index.jsx";
+import { LoadingScreen } from "../components/LoadingScreen/";
+import { PageContent } from "../components/PageContent/";
 
 function App() {
   const loading = true;

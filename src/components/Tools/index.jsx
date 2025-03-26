@@ -6,7 +6,6 @@ import { PickIcon } from "../../assets/image/svg/PickIcon.jsx";
 import { CompassIcon } from "../../assets/image/svg/CompassIcon.jsx";
 import { FlashlightIcon } from "../../assets/image/svg/FlashlightIcon.jsx";
 
-// Импорт Swiper и его стили
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css"; 
 
