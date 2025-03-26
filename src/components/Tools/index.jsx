@@ -30,7 +30,6 @@ const Tools = () => {
       </h3>
       <nav className={s.nav}>
         <Swiper
-          spaceBetween={20}
           slidesPerView={"auto"}
           loop={true}
           className={s.customSwiper}
