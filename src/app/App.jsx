@@ -1,5 +1,4 @@
 import classNames from "classnames";
-import { DecorPhone } from "../assets/image/svg/DecorPhoneIcon.jsx";
 import { BookLink } from "../components/BookLink/";
 import { LoadingScreen } from "../components/LoadingScreen/index.jsx";
 import { Location } from "../components/Location/";
@@ -24,9 +23,6 @@ function App() {
           <Route />
           <Tools />
           <BookLink />
-          <div className={s.decor}>
-            <DecorPhone />
-          </div>
         </>
       )}
     </div>
