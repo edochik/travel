@@ -1,0 +1,10 @@
+@use '../style/mixin.scss' as mix;
+.App {
+	height: 100vh;
+	display: flex;
+	justify-self: center;
+	align-items: center;
+	.loader {
+		@include mix.loader();
+	}
+}
