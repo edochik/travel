@@ -1,7 +1,7 @@
 import { Routes } from "react-router";
 import { Route, useNavigate } from "react-router-dom";
 import { LoadingScreen } from "../components/LoadingScreen/";
-import { PageContent } from "../components/PageContent/";
+import { PageContent } from "../pages/PageContent/index.jsx";
 import { DeviceChecker } from "../components/DeviceChecker/";
 import { RotateToPortrait } from "../components/RotateToPortrait/";
 import { useEffect, useState } from "react";

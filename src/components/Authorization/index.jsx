@@ -1,12 +1,6 @@
 import { useEffect, useState } from "react";
+import { fakeUser } from "./fakeUser.js";
 
-const fakeUser = {
-	id: 12345,
-	first_name: "John",
-	last_name: "Doe",
-	username: "johndoe",
-	photo_url: "https://example.com/fake-photo.jpg",
-};
 
 const Authorization = () => {
 	const [user, setUser] = useState(null); // Для хранения данных о пользователе
@@ -37,14 +31,10 @@ const Authorization = () => {
 						body: JSON.stringify(fakeUser),
 					}
 				);
-				console.log(response.ok, 'resp');
 				if (response.ok) {
-					// console.log('ошибка тут');
+					// не используем так как достаем данные из заголовка
 					// const data = await response.json();
-					// console.log('сюда не заходит??? почему');
 					const token = response.headers.get("authorization"); // Извлекаем токен из заголовков ответа
-					console.log(token, 'token');
-					// console.log('$$$$$$$$$$$$$$$$$$$$===================');
 					// if (token) {
 					localStorage.setItem("authToken", token); // Сохраняем токен в localStorage
 					// console.log("Вы успешно авторизованы!");
