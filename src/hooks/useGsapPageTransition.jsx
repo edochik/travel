@@ -16,30 +16,30 @@ const useGsapPageTransition = (ref) => {
 export { useGsapPageTransition };
 
 
-//варианты 
-
+// варианты ...
 // выдвигается снизу в верх
-// gsap.fromTo(
+
+// 1. gsap.fromTo(
 // 	ref.current,
 // 	{ opacity: 0, y: 20 },
 // 	{ opacity: 1, y: 0, duration: 1, ease: "power3.out" }
 // );
 
-// с права на лево
+// 2. с права на лево
 // gsap.fromTo(
 // 	ref.current,
 // 	{ opacity: 0, x: 100 },
 // 	{ opacity: 1, x: 0, duration: 0.8, ease: "power3.out" }
 // );
 
-// увеличивается с центра
+// 3. увеличивается с центра
 // 	gsap.fromTo(
 // 		ref.current,
 // 		{ opacity: 0, scale: 0.8 },
 // 		{ opacity: 1, scale: 1, duration: 0.8, ease: "power3.out" }
 // 	);
 
-// с начала появляются к верх ногами, потом переворачиваются
+// 4. с начала появляются к верх ногами, потом переворачиваются
 //   gsap.fromTo(
 //     ref.current.children,
 //     { opacity: 0, rotate: -90 },
@@ -47,7 +47,7 @@ export { useGsapPageTransition };
 //   );
 
 
-//[самый худший - сначала все мутное потом улучается]
+// 5. [самый худший - сначала все мутное потом улучается]
 //   gsap.fromTo(
 //     ref.current,
 //     { opacity: 0, filter: "blur(10px)" },
