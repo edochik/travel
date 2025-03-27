@@ -4,7 +4,7 @@ import s from "./LoadingScreen.module.scss";
 
 const LoadingScreen = ({ isLoading }) => {
   if (!isLoading) {
-    return <Navigate to="/" />;
+    return <Navigate to="/travel" />;
   }
 
   return (
