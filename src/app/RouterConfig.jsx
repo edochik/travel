@@ -7,13 +7,17 @@ import { RotateToPortrait } from "../components/RotateToPortrait/";
 import { useEffect, useState } from "react";
 import { useIsMobile } from "../hooks/useIsMobile.jsx";
 import { useOrientation } from "../hooks/useOrientation.jsx";
+import gsap from "gsap";
+import { useGsapPageTransition } from "../hooks/useGsapPageTransition.jsx";
 
 const RouterConfig = () => {
 	const isPortrait = useOrientation();
 	const isMobile = useIsMobile();
 	const navigate = useNavigate();
-	// const { pathname } = useLocation();
-	// console.log(pathname, 'pathname');
+
+	useGsapPageTransition()
+
+
 	const [initialState, setInitialState] = useState({
 		isLoading: true,
 		isPortrait,
@@ -21,7 +25,7 @@ const RouterConfig = () => {
 	});
 
 	useEffect(() => {
-		const timer = setTimeout(() => setInitialState(prev => ({ ...prev, isLoading: false })), 2000);
+		const timer = setTimeout(() => setInitialState(prev => ({ ...prev, isLoading: false })), 3000);
 		return () => {
 			clearTimeout(timer);
 		};
