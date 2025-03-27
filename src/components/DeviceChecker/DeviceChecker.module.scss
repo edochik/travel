@@ -1,0 +1,22 @@
+@use '../../style/variable.scss' as var;
+
+.DeviceChecker {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	.qrCode {
+		width: 30vw;
+		> svg {
+			fill: var.$color-secondary;
+			border: 3px solid var.$color-primary;
+		}
+	}
+	.text {
+		font-size: var.$font-large;
+		text-align: center;
+		.link {
+		}
+	}
+}

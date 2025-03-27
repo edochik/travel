@@ -1,12 +1,19 @@
 import { useState, useEffect } from 'react';
 
+
+// Хук для определения, является ли устройство мобильным (ширина экрана < 768px)
 export const useIsMobile = () => {
-	const [isMobile, setIsMobile] = useState(false);
+	const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
 	useEffect(() => {
-		const userAgent = navigator.userAgent;
-		const mobileRegex = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
-		setIsMobile(mobileRegex.test(userAgent));
+		const handleResize = () => {
+			setIsMobile(window.innerWidth < 768);
+		};
+
+		window.addEventListener("resize", handleResize);
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
 	}, []);
 
 	return isMobile;
