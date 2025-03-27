@@ -1,4 +1,4 @@
-import { Routes } from "react-router";
+import { Routes, useLocation } from "react-router";
 import { Route, useNavigate } from "react-router-dom";
 import { LoadingScreen } from "../components/LoadingScreen/";
 import { PageContent } from "../components/PageContent/";
@@ -12,7 +12,8 @@ const RouterConfig = () => {
 	const isPortrait = useOrientation();
 	const isMobile = useIsMobile();
 	const navigate = useNavigate();
-
+	// const { pathname } = useLocation();
+	// console.log(pathname, 'pathname');
 	const [initialState, setInitialState] = useState({
 		isLoading: true,
 		isPortrait,
@@ -34,24 +35,26 @@ const RouterConfig = () => {
 		}));
 	}, [isPortrait, isMobile]);
 
+
+	// в функцию обернуть для перехода между страницами в отдельную функцию
 	useEffect(() => {
-		if (initialState.isLoading) {
-			navigate("/load");
-		} else if (!initialState.isMobile) {
+		if (!initialState.isMobile) {
 			navigate("/device-check");
+		} else if (initialState.isLoading) {
+			navigate("/loading");
 		} else if (!initialState.isPortrait) {
 			navigate("/rotate");
 		} else {
-			navigate('/travel')
+			navigate('/travel');
 		}
 	}, [initialState, navigate]);
 
 	return <Routes>
-		<Route path="/load" element={<LoadingScreen isLoading={initialState.isLoading} />}></Route>
+		<Route path="/loading" element={<LoadingScreen isLoading={initialState.isLoading} />} />
 		<Route path="/travel" element={<PageContent />} />
-		<Route path="/fake" element={<PageContent />}></Route>
-		<Route path="/device-check" element={<DeviceChecker />}></Route>
-		<Route path="/rotate" element={<RotateToPortrait />}></Route>
+		<Route path="/fake" element={<PageContent />} />
+		<Route path="/device-check" element={<DeviceChecker />} />
+		<Route path="/rotate" element={<RotateToPortrait />} />
 	</Routes>
 };
 
