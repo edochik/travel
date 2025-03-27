@@ -1,7 +1,12 @@
+import { Navigate } from "react-router-dom";
 import { MooseIcon } from "../../assets/image/svg/MooseIcon.jsx";
 import s from "./LoadingScreen.module.scss";
 
-const LoadingScreen = () => {
+const LoadingScreen = ({ isLoading }) => {
+  if (!isLoading) {
+    return <Navigate to="/" />;
+  }
+
   return (
     <div className={s.LoadingScreen}>
       <div className={s.logo}>
