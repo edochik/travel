@@ -1,4 +1,4 @@
-import { Routes, useLocation } from "react-router";
+import { Routes } from "react-router";
 import { Route, useNavigate } from "react-router-dom";
 import { LoadingScreen } from "../components/LoadingScreen/";
 import { PageContent } from "../components/PageContent/";
@@ -7,16 +7,11 @@ import { RotateToPortrait } from "../components/RotateToPortrait/";
 import { useEffect, useState } from "react";
 import { useIsMobile } from "../hooks/useIsMobile.jsx";
 import { useOrientation } from "../hooks/useOrientation.jsx";
-import gsap from "gsap";
-import { useGsapPageTransition } from "../hooks/useGsapPageTransition.jsx";
 
 const RouterConfig = () => {
 	const isPortrait = useOrientation();
 	const isMobile = useIsMobile();
 	const navigate = useNavigate();
-
-	useGsapPageTransition()
-
 
 	const [initialState, setInitialState] = useState({
 		isLoading: true,
