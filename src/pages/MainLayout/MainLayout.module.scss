@@ -1,0 +1,7 @@
+@use '../../style/variable.scss' as var;
+
+.MainLayout {
+	// padding: var.$padding-app;
+	overflow: hidden;
+	// min-height: 100vh;
+}

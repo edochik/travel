@@ -1,0 +1,11 @@
+@use '../../style/variable.scss' as var;
+
+.FakePage {
+	padding: var.$padding-app;
+	min-height: 100vh;
+	text-align: center;
+
+	:last-child {
+		font-size: 26px;
+	}
+}
