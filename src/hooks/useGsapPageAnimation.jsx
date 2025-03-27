@@ -1,19 +1,20 @@
 import { useEffect } from "react";
 import gsap from "gsap";
 
-const useGsapPageTransition = (ref) => {
+const useGsapPageAnimation = (ref, pathname) => {
 	useEffect(() => {
-		if (!ref?.current) return;
-		gsap.fromTo(
-			ref.current,
-			{ opacity: 0, x: 100 },
-			{ opacity: 1, x: 0, duration: 0.8, ease: "power3.out" }
-		);
-	}, [ref]); 
+		if (ref.current) {
+			gsap.fromTo(
+				ref.current,
+				{ opacity: 0, x: 100 },
+				{ opacity: 1, x: 0, duration: 0.8, ease: "power3.out" }
+			);
+		}
+	}, [pathname, ref]);
 	return null;
 };
 
-export { useGsapPageTransition };
+export { useGsapPageAnimation };
 
 
 // варианты ...

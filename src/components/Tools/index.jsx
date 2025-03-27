@@ -8,6 +8,7 @@ import { FlashlightIcon } from "../../assets/image/svg/FlashlightIcon.jsx";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
+import { useNavigate } from "react-router-dom";
 
 const tools = [
   { id: 1, text: "Knife", icon: <KnifeIcon /> },
@@ -22,6 +23,15 @@ const tools = [
 
 const Tools = () => {
   const [active, setActive] = useState(1);
+  const navigate = useNavigate()
+
+  const onClickNextPage = (number) => {
+    setActive(number)
+    if (number === 2) {
+      console.log('tut', number, 'number');
+      navigate('/fake')
+    }
+  }
 
   return (
     <div className={s.Tools}>
@@ -41,7 +51,7 @@ const Tools = () => {
                   [s.item]: true,
                   [s.active]: active === index,
                 })}
-                onClick={() => setActive(index)}
+                onClick={() => onClickNextPage(index)}
               >
                 <div className={s.image}>{icon}</div>
                 {active === index && <span className={s.text}>{text}</span>}
