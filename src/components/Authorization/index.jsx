@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { fakeUser } from "./fakeUser.js";
+import { API_URL } from "../../api/api.js";
 
 
 const Authorization = () => {
@@ -24,7 +25,7 @@ const Authorization = () => {
 
 			try {
 				const response = await fetch(
-					"https://trip.sjp-asia.group/api/auth", // Замените на ваш API endpoint
+					API_URL, // Замените на ваш API endpoint
 					{
 						method: "POST",
 						headers: { "Content-Type": "application/json" },
