@@ -1,5 +1,5 @@
 import { Routes } from "react-router";
-import { Route, useNavigate } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { LoadingScreen } from "../components/LoadingScreen/";
 import { PageContent } from "../pages/PageContent/index.jsx";
 import { DeviceChecker } from "../components/DeviceChecker/";
@@ -13,7 +13,6 @@ import { FakePage } from "../pages/FakePage/index.jsx";
 const RouterConfig = () => {
 	const isPortrait = useOrientation();
 	const isMobile = useIsMobile();
-	const navigate = useNavigate();
 
 	const [initialState, setInitialState] = useState({
 		isLoading: true,
@@ -36,22 +35,8 @@ const RouterConfig = () => {
 		}));
 	}, [isPortrait, isMobile]);
 
-
-	// в функцию обернуть для перехода между страницами в отдельную функцию
-	// useEffect(() => {
-	// 	if (!initialState.isMobile) {
-	// 		navigate("/device-check");
-	// 	} else if (initialState.isLoading) {
-	// 		navigate("/loading");
-	// 	} else if (!initialState.isPortrait) {
-	// 		navigate("/rotate");
-	// 	} else {
-	// 		navigate('/');
-	// 	}
-	// }, [initialState, navigate]);
-
 	if (!initialState.isMobile) {
-		return <DeviceChecker />;
+		return <DeviceChecker  />;
 	} else if (initialState.isLoading) {
 		return <LoadingScreen isLoading={initialState.isLoading} />;
 	} else if (!initialState.isPortrait) {

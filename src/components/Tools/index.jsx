@@ -28,7 +28,6 @@ const Tools = () => {
   const onClickNextPage = (number) => {
     setActive(number)
     if (number === 2) {
-      console.log('tut', number, 'number');
       navigate('/fake')
     }
   }
